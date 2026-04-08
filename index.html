@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WavyGirl Detailing LLC — Marine & Auto Detailing | Tampa Bay</title>
+  <meta name="description" content="WavyGirl Detailing LLC — Professional marine and auto detailing. STARKE Yacht Care certified. Ceramic coatings, restoration, and maintenance packages. Serving Tampa Bay." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --purple: #7b2d8b; --teal: #00c9c8; --pink: #e040a0; --dark: #0a0a0f; --dark2: #0f0f1a; --gray: #16161f; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body { width: 100%; overflow-x: hidden; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: #fff; }
+    a { text-decoration: none; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 70px; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; background: rgba(10,10,15,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,201,200,0.15); }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo-placeholder { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--purple), var(--teal)); display: flex; align-items: center; justify-content: center; font-size: 10px; color: #fff; font-weight: 700; text-align: center; line-height: 1.2; font-family: 'Montserrat', sans-serif; }
+    .nav-logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 15px; color: #fff; }
+    .nav-logo-text span { color: var(--teal); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { background: linear-gradient(135deg, var(--purple), var(--teal)); color: #fff !important; padding: 9px 20px; border-radius: 8px; font-weight: 700 !important; transition: opacity 0.2s !important; }
+    .nav-cta:hover { opacity: 0.85 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+    .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(10,10,15,0.98); padding: 24px 32px; flex-direction: column; gap: 16px; z-index: 99; border-bottom: 1px solid rgba(0,201,200,0.15); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 600; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .mobile-menu a:last-child { background: linear-gradient(135deg, var(--purple), var(--teal)); color: #fff; text-align: center; border-radius: 8px; padding: 12px; border-bottom: none; margin-top: 4px; font-weight: 700; }
+    .hero { min-height: 100vh; background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(10,10,15,0.85) 100%), url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1600&q=80') center/cover no-repeat; display: flex; align-items: center; position: relative; overflow: hidden; }
+    .hero-wave { position: absolute; bottom: -2px; left: 0; right: 0; }
+    .hero-content { max-width: 1100px; margin: 0 auto; padding: 140px 48px 120px; width: 100%; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,201,200,0.1); border: 1px solid rgba(0,201,200,0.3); border-radius: 100px; padding: 6px 16px; margin-bottom: 28px; }
+    .hero-badge span { color: var(--teal); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; }
+    .hero-stars { color: var(--teal); font-size: 14px; margin-bottom: 20px; letter-spacing: 2px; }
+    .hero-title { font-family: 'Montserrat', sans-serif; font-size: clamp(40px, 6vw, 78px); font-weight: 900; line-height: 1.0; letter-spacing: -2px; margin-bottom: 20px; }
+    .hero-title .grad { background: linear-gradient(135deg, var(--teal), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { color: rgba(255,255,255,0.65); font-size: 17px; line-height: 1.7; max-width: 500px; margin-bottom: 40px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 60px; }
+    .btn-grad { background: linear-gradient(135deg, var(--purple), var(--teal)); color: #fff; padding: 16px 32px; border-radius: 10px; font-weight: 800; font-size: 15px; font-family: 'Montserrat', sans-serif; transition: opacity 0.2s; }
+    .btn-grad:hover { opacity: 0.85; }
+    .btn-outline { color: rgba(255,255,255,0.8); border: 1.5px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 15px 28px; font-size: 15px; font-weight: 600; transition: all 0.2s; }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+    .hero-stats { display: flex; gap: 48px; flex-wrap: wrap; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .stat-val { background: linear-gradient(135deg, var(--teal), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+    .stat-label { color: rgba(255,255,255,0.4); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+    .services-section { width: 100%; padding: 100px 48px; background: var(--dark2); }
+    .section-wrap { max-width: 1100px; margin: 0 auto; }
+    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; font-family: 'Montserrat', sans-serif; }
+    .section-title { font-family: 'Montserrat', sans-serif; font-size: 38px; font-weight: 800; color: #fff; letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15; }
+    .section-sub { color: rgba(255,255,255,0.45); font-size: 15px; line-height: 1.75; max-width: 560px; margin-bottom: 52px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .service-card { background: var(--gray); border: 1px solid rgba(0,201,200,0.1); border-radius: 16px; padding: 28px; transition: all 0.25s; }
+    .service-card:hover { border-color: var(--teal); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,201,200,0.08); }
+    .service-icon { font-size: 28px; margin-bottom: 16px; }
+    .service-name { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .service-desc { color: rgba(255,255,255,0.45); font-size: 14px; line-height: 1.6; }
+    .cert-section { width: 100%; padding: 60px 48px; background: linear-gradient(135deg, rgba(123,45,139,0.15), rgba(0,201,200,0.1)); border-top: 1px solid rgba(0,201,200,0.1); border-bottom: 1px solid rgba(0,201,200,0.1); }
+    .cert-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; justify-content: center; text-align: center; }
+    .cert-badge { background: var(--gray); border: 1px solid rgba(0,201,200,0.2); border-radius: 16px; padding: 24px 32px; }
+    .cert-badge h3 { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: var(--teal); margin-bottom: 6px; }
+    .cert-badge p { color: rgba(255,255,255,0.45); font-size: 13px; }
+    .contact-section { width: 100%; padding: 100px 48px; background: var(--dark); }
+    .contact-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 80px; align-items: flex-start; flex-wrap: wrap; }
+    .contact-left { flex: 1 1 340px; }
+    .contact-title { font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 20px; }
+    .contact-title .grad { background: linear-gradient(135deg, var(--teal), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .contact-sub { color: rgba(255,255,255,0.45); font-size: 15px; line-height: 1.7; margin-bottom: 32px; }
+    .contact-detail { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 14px; }
+    .contact-detail a { color: var(--teal); }
+    .contact-right { flex: 1 1 380px; }
+    .form-label { display: block; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.35); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 8px; font-family: 'Montserrat', sans-serif; }
+    .form-input, .form-textarea { width: 100%; background: var(--gray); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 13px 16px; color: #fff; font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s; margin-bottom: 16px; }
+    .form-textarea { resize: none; line-height: 1.6; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--teal); }
+    .form-input::placeholder, .form-textarea::placeholder { color: #444; }
+    .form-submit { width: 100%; background: linear-gradient(135deg, var(--purple), var(--teal)); color: #fff; border: none; border-radius: 8px; padding: 15px; font-weight: 800; font-size: 15px; cursor: pointer; font-family: 'Montserrat', sans-serif; transition: opacity 0.2s; }
+    .form-submit:hover { opacity: 0.85; }
+    .form-success { text-align: center; padding: 40px 0; color: #fff; }
+    .form-success .check { font-size: 48px; margin-bottom: 16px; }
+    .form-success h3 { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .form-success p { color: rgba(255,255,255,0.4); font-size: 14px; }
+    footer { width: 100%; background: #050508; padding: 32px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; border-top: 1px solid rgba(0,201,200,0.1); }
+    .footer-logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14px; color: #fff; }
+    .footer-logo span { color: var(--teal); }
+    footer p { color: rgba(255,255,255,0.25); font-size: 12px; }
+    .footer-links a { color: rgba(255,255,255,0.25); font-size: 12px; margin-left: 16px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal); }
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero-content { padding: 110px 24px 100px; }
+      .services-section, .contact-section { padding: 72px 24px; }
+      .cert-section { padding: 48px 24px; }
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+      .hero-stats { gap: 32px; }
+      .contact-inner { gap: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-placeholder">YOUR LOGO</div>
+      <div class="nav-logo-text">WavyGirl <span>Detailing</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Get a Quote</a>
+      <a href="tel:7272440201" class="nav-cta">Call Now</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#certifications" onclick="toggleMenu()">Certifications</a>
+    <a href="#contact" onclick="toggleMenu()">Get a Quote</a>
+    <a href="tel:7272440201" onclick="toggleMenu()">Call — (727) 244-0201</a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge"><span>Marine & Auto Detailing Specialists</span></div>
+      <div class="hero-stars">★★★★★ &nbsp; Licensed & Insured</div>
+      <h1 class="hero-title">Detail That<br /><span class="grad">Makes Waves.</span></h1>
+      <p class="hero-sub">Professional marine and auto detailing by Hannah Frank. STARKE Yacht Care certified installers specializing in ceramic coatings, restoration, and maintenance packages across Tampa Bay.</p>
+      <div class="hero-btns">
+        <a href="tel:7272440201" class="btn-grad">Get a Quote →</a>
+        <a href="#services" class="btn-outline">View Services</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-val">★★★★★</div><div class="stat-label">5-Star Service</div></div>
+        <div><div class="stat-val">Marine</div><div class="stat-label">& Auto Certified</div></div>
+        <div><div class="stat-val">STARKE</div><div class="stat-label">Yacht Care Certified</div></div>
+      </div>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0f0f1a"/>
+    </svg>
+  </section>
+
+  <section class="services-section" id="services">
+    <div class="section-wrap">
+      <p class="eyebrow">What We Do</p>
+      <h2 class="section-title">Premium Detailing,<br />On the Water & Off.</h2>
+      <p class="section-sub">Every detail is performed with professional-grade products and obsessive attention to finish. Boats, yachts, cars — we handle it all.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">⚓</div>
+          <div class="service-name">Marine Detailing</div>
+          <div class="service-desc">Full exterior and interior detailing for boats and yachts. Hull cleaning, oxidation removal, teak restoration, and brightwork polishing.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <div class="service-name">Ceramic Coatings</div>
+          <div class="service-desc">STARKE Yacht Care certified ceramic coating installation for boats and vehicles. Long-term protection against UV, salt, and environmental damage.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <div class="service-name">Paint Restoration</div>
+          <div class="service-desc">Oxidation removal, compound polishing, and paint correction to bring faded gelcoat and automotive paint back to life.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚗</div>
+          <div class="service-name">Auto Detailing</div>
+          <div class="service-desc">Interior and exterior auto detailing — hand wash, clay bar, polish, interior deep clean, and protective coatings.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔄</div>
+          <div class="service-name">Maintenance Packages</div>
+          <div class="service-desc">Regular cleaning and maintenance packages to keep your boat or vehicle in peak condition year-round. Flexible scheduling available.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💎</div>
+          <div class="service-name">Full Detail</div>
+          <div class="service-desc">Complete top-to-bottom detail package for boats and vehicles. The works — inside, outside, top to bottom, stem to stern.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cert-section" id="certifications">
+    <div class="cert-inner">
+      <div class="cert-badge">
+        <h3>⚓ STARKE Yacht Care Certified</h3>
+        <p>Professionally certified installer of STARKE ceramic coatings for marine applications</p>
+      </div>
+      <div class="cert-badge">
+        <h3>🛡️ Licensed & Insured</h3>
+        <p>Fully licensed and insured for your peace of mind on every job</p>
+      </div>
+      <div class="cert-badge">
+        <h3>🌊 Marine Specialists</h3>
+        <p>Specialized expertise in boats, yachts, and watercraft detailing</p>
+      </div>
+      <div class="cert-badge">
+        <h3>★★★★★ 5-Star Rated</h3>
+        <p>Consistently 5-star reviews from satisfied clients across Tampa Bay</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <h2 class="contact-title">Ready to Make Your Boat <span class="grad">Shine?</span></h2>
+        <p class="contact-sub">Fill out the form or call Hannah directly for a quote. Serving Tampa Bay and surrounding areas.</p>
+        <div class="contact-detail">📞 <a href="tel:7272440201">(727) 244-0201</a></div>
+        <div class="contact-detail">📧 <a href="mailto:wavygirldetailing@gmail.com">wavygirldetailing@gmail.com</a></div>
+        <div class="contact-detail">📍 Tampa Bay, Florida</div>
+        <div class="contact-detail">📱 <a href="https://www.instagram.com/wavygirl_detailing" target="_blank">@wavygirl_detailing</a></div>
+      </div>
+      <div class="contact-right">
+        <div id="form-container">
+          <label class="form-label">Your Name</label>
+          <input class="form-input" id="f-name" placeholder="John Smith" />
+          <label class="form-label">Phone Number</label>
+          <input class="form-input" id="f-phone" placeholder="(727) 555-0000" />
+          <label class="form-label">Boat / Vehicle & Service Needed</label>
+          <input class="form-input" id="f-service" placeholder="2022 Fountain 34 — Ceramic Coating" />
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" id="f-msg" rows="3" placeholder="Any additional details..."></textarea>
+          <button class="form-submit" onclick="submitContact()">Request a Quote →</button>
+        </div>
+        <div id="form-success" style="display:none;" class="form-success">
+          <div class="check">✓</div>
+          <h3>Request Received!</h3>
+          <p>Hannah will be in touch shortly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">WavyGirl <span>Detailing</span> LLC</div>
+    <p>© 2025 WavyGirl Detailing LLC — Tampa Bay, FL · Licensed & Insured</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById("mobile-menu").classList.toggle("open"); }
+    async function submitContact() {
+      const name = document.getElementById("f-name").value;
+      const phone = document.getElementById("f-phone").value;
+      const service = document.getElementById("f-service").value;
+      const msg = document.getElementById("f-msg").value;
+      if (!name || !phone) return;
+      await fetch("https://formspree.io/f/xgoplldq", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name, phone, service, message: msg }) });
+      document.getElementById("form-container").style.display = "none";
+      document.getElementById("form-success").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
